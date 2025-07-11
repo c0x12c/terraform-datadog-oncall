@@ -54,6 +54,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_escalation_policy"></a> [escalation\_policy](#input\_escalation\_policy) | Configuration for the on-call escalation policy. | <pre>object({<br/>    name                       = string<br/>    resolve_page_on_policy_end = bool<br/>    retries                    = number<br/>  })</pre> | n/a | yes |
+| <a name="input_escalation_policy_escalate_after_seconds"></a> [escalation\_policy\_escalate\_after\_seconds](#input\_escalation\_policy\_escalate\_after\_seconds) | The number of seconds after which to escalate the on-call notification. | `number` | `60` | no |
 | <a name="input_schedule"></a> [schedule](#input\_schedule) | Configuration for the on-call schedule, including name, time zone, and layer details. | <pre>object({<br/>    name      = string<br/>    time_zone = string<br/>    layer = object({<br/>      name           = string<br/>      effective_date = string<br/>      rotation_start = string<br/>      interval_days  = number<br/>      users          = list(string)<br/>    })<br/>  })</pre> | n/a | yes |
 | <a name="input_team_id"></a> [team\_id](#input\_team\_id) | The ID of the Datadog team to associate with the on-call resources. | `string` | n/a | yes |
 | <a name="input_urgency"></a> [urgency](#input\_urgency) | The urgency level for the routing rule. | `string` | `"high"` | no |
