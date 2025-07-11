@@ -23,7 +23,7 @@ resource "datadog_on_call_escalation_policy" "this" {
 
   step {
     assignment             = null
-    escalate_after_seconds = var.escalation_policy.escalate_after_seconds
+    escalate_after_seconds = var.escalation_policy_escalate_after_seconds
     target {
       schedule = datadog_on_call_schedule.this.id
     }
